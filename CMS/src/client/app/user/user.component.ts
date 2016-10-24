@@ -94,7 +94,8 @@ export class UserComponent extends PrivateComponent {
     constructor(private api: APIService){
         super(api);
 
-        if (this.api.user_info.shop_id > 0)
+
+        if (this.api.user_info != null && this.api.user_info.shop_id > 0)
             this.api.navigateTo("orders")
         else
             this.refreshList();
